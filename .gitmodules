@@ -1,3 +1,4 @@
 [submodule "libfirm"]
 	path = libfirm
-	url = https://pp.info.uni-karlsruhe.de/git/libfirm.git/
+	url = https://github.com/tmpvar/libfirm.git
+	branch = win32-clang
