@@ -305,6 +305,18 @@ int action_compile(const char *argv0)
 	return result;
 }
 
+#ifdef _WIN32
+char *strndup(const char *s, size_t n)
+{
+	size_t l = strnlen(s, n);
+	char *d = malloc(l+1);
+	if (!d) return NULL;
+	memcpy(d, s, l);
+	d[l] = 0;
+	return d;
+}
+#endif
+
 int main(int argc, char **argv)
 {
 	init_temp_files();
@@ -321,6 +333,7 @@ int main(int argc, char **argv)
 		char const *const name  = slash ? slash + 1 : full_name;
 		char const *const dash  = strstr(name, "-cparser");
 		if (dash) {
+
 			char *const triple = strndup(name, dash - name);
 			parse_target_triple(triple);
 			free(triple);

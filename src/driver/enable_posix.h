@@ -25,6 +25,8 @@
 #define popen(cmd, mode)         _popen(cmd, mode)
 #define unlink(filename)         _unlink(filename)
 
+#define getcwd(buffer, maxlen)  _getcwd(buffer, maxlen)
+
 #ifndef STDOUT_FILENO
 #define STDOUT_FILENO _fileno(stdout)
 #endif

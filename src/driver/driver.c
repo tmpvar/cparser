@@ -10,7 +10,11 @@
 #include <libfirm/statev.h>
 #include <stdio.h>
 #include <string.h>
-#include <unistd.h>
+// #ifdef _WIN32
+// 	#include <io.h>
+// #else
+// 	#include <unistd.h>
+// #endif
 
 #include "adt/panic.h"
 #include "adt/strutil.h"

@@ -50,7 +50,7 @@ CFLAGS += $(CFLAGS_$(variant))
 
 LINKFLAGS_profile  = -pg
 LINKFLAGS_coverage = --coverage
-LINKFLAGS := $(LINKFLAGS) $(LINKFLAGS_$(variant)) $(FIRM_LIBS)
+LINKFLAGS := $(LINKFLAGS) $(LINKFLAGS_$(variant)) $(FIRM_LIBS) -v -lkernel32 -lwinmm
 
 libcparser_SOURCES := $(wildcard $(top_srcdir)/src/*/*.c)
 libcparser_OBJECTS = $(libcparser_SOURCES:%.c=$(builddir)/%.o)

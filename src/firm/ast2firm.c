@@ -9,7 +9,11 @@
 #include <libfirm/firm.h>
 #include <stdbool.h>
 #include <string.h>
-#include <unistd.h>
+#ifdef _WIN32
+	#include "../driver/enable_posix.h"
+#else
+	#include <unistd.h>
+#endif
 
 #include "adt/array.h"
 #include "adt/panic.h"
